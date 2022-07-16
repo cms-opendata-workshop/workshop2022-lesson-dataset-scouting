@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Be able to find the data and Monte Carlo datasets"
 keypoints:
-- "Use the filter selections in the left-hand sidebar of the CERN Open Data Portal to find dataset."
+- "Use the filter selections in the left-hand sidebar of the CERN Open Data Portal to find datasets."
 ---
 
 # CERN Open Data Portal
