@@ -22,8 +22,8 @@ keypoints:
 > ## You've got a great idea! What's next?
 > Suppose you have a great idea that you want to test out with real data! You're going to want
 > to know:
-> * What **year** was the data taken that would work best for you?
-> * What **triggers** were applied? (how was the data pre-selected to be saved and recorded)
+> * What **year** were the data taken that would work best for you?
+> * In which **primary dataset** were the data of your interest stored?
 > * What **Monte Carlo datasets** are available and appropriate for your studies?
 >     * This may mean finding simulated physics processes that are **background** to your signal
 >     * This may mean finding simulated physics processes for your **signal**, if they exist
@@ -31,11 +31,11 @@ keypoints:
 {: .checklist}
 
 In this lesson, we'll walk through the process of finding out what data and 
-Monte Carlo is available to you, how to find it, and how to examine what 
-data is in the individual data files. 
+Monte Carlo are available to you, how to find them, and how to examine what 
+data are in the individual data files. 
 
-First of all, let's understand how the data is stored and why we need certain
-tools to access it. 
+First of all, let's understand how the data are stored and why we need certain
+tools to access them. 
 
 
 # The CERN Open Data Portal
