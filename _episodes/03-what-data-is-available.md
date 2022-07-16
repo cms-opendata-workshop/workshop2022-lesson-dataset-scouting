@@ -10,7 +10,7 @@ objectives:
 - "To be able to navigate the CERN Open Data Portal's search tools"
 - "To be able to find what triggers and Monte Carlo datasets there are using these search tools"
 keypoints:
-- "The triggers are all given their own collision datasets"
+- "The data are directed to different datasetsFor each dataset, the list of triggers is listed in the dataset record. You will learn more about them during the workshop. based on trigger decisions"
 - "The Monte Carlo samples all have their own datasets"
 - "Navigating the Open Data Portal is the right way to find out what is available"
 ---
@@ -18,10 +18,10 @@ keypoints:
 ## Data and triggers
 
 We make a distinction between *data* which comes from the real-life CMS detector
-and *Monte Carlo* data. In general, when we say *data*, we mean the real, CMS-detector-created
+and simulated *Monte Carlo* data. In general, when we say *data*, we mean the real, CMS-detector-created
 data.
 
-The main data available is from what is known as **Run 1** and spans 2010-2012. These run
+The main data available is from what is known as **Run 1** and spans 2010-2012. The first batch of **Run 2** data from 2015 was released in 2021. These run
 periods can also be broken into **A**, **B**, **C**, and so-on, sub-periods and you may see
 that in some of the dataset names. 
 
@@ -65,25 +65,20 @@ Let's take a look at two of them and see if we can break down these names.
 
 There are three (3) parts to the names, separated by `/'. 
 
-**Trigger**
+**Dataset name**
 
-*DoubleElectron* or *SingleMu* is the name of the trigger. 
-This is the *trigger* that selected out this subset of data. Ideally, you have 
-completed the [pre-exercise on triggers in CMS](https://cms-opendata-workshop.github.io/workshop2022-lesson-introtrigger/)
+*DoubleElectron* or *SingleMu* is the name of the dataset. Events stored in these primary datasets were selected by *triggers* of usually of a same type. For each dataset, the list of triggers is listed in the dataset record. 
+You will learn more about them in the trigger lesson during the workshop, 
 but for now, remind yourself that they
 select out some subset of the collisions based on certain criteria in the hardware
 or software. 
 
-Some of them are quite difficult to intuit what they mean. Others should be roughly understandable. For example, 
+Some of the dataset names are quite difficult to intuit what they mean. Others should be roughly understandable. For example, 
 
-* **DoubleElectron** required at least two electrons above a certain energy threshold. 
-* **SingleMu** required at least one muon above a certain momentum threshol. 
+* **DoubleElectron** contains mainly events with at least two electrons above a certain energy threshold. 
+* **SingleMu** contains mainly events with at least one muon above a certain momentum threshol. 
 * **MinimumBias** events are taken without any trigger or selection criteria. 
 
-For more information on these triggers, you can either reach out to the 
-organizers through [Mattermost](https://mattermost.web.cern.ch/cmsodws2022/channels/town-square)
-or review the 
-[pre-exercise on triggers in CMS](https://cms-opendata-workshop.github.io/workshop2022-lesson-introtrigger/).
 
 **Run period**
 
@@ -97,8 +92,8 @@ you might have to shift your analysis to a different dataset once all calibratio
 * **RAW** files contain information directly from the detector in the form of hits from the TDCs/ADCs. 
 These files are not a focus of this workshop. 
 * **AOD** stands for *Analysis Object Data*. This is the first stage of data where analysts can really start
-physics analysis. Often, the experiment will slim this down and drop some subsets of the data stream into 
-*MiniAOD* or the newer *NanoAOD*, but the Run 1 open data is only available for analysis in AOD format.
+physics analysis. 
+* **MINIAOD** is a slimmer format of AOD, in use from Run 2 open data on. Often, the experiment will slim this down and drop some subsets of the data stream into *NanoAOD*, but the current open data were not yet reprocessed in that format.
 
 ### Further information
 
@@ -179,8 +174,8 @@ taken care to only post vetted data. But it is all part of the data provenance.
 
 The last field refers to the data format and here again there is a slight difference.
 
-* **AODSIM** stands for *Analysis Object Data - Simulation*. This is the same as 
-the **AOD** format used in the collision data, except that there are some extra fields that
+* **AODSIM** or **MINIAODSIM** stands for *Analysis Object Data - Simulation*. This is the same as 
+the **AOD** or **MINIAOD** format used in the collision data, except that there are some extra fields that
 store information about the original, generated 4-vectors at the parton level, as well
 as some other Monte Carlo-specific information. 
 
