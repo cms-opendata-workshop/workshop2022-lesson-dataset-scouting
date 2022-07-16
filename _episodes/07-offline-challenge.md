@@ -1,5 +1,5 @@
 ---
-title: "Offline challenge"
+title: "Final challenge"
 teaching: 0
 exercises: 30
 questions:
