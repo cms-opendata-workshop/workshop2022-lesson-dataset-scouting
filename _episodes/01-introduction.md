@@ -13,13 +13,10 @@ keypoints:
 - "A careful understanding of the search options can help with finding what you need"
 ---
 
-> ## Get ahead!
+> ## Ready to go?
 > The 3/4 of this lesson is done entirely in the browser. 
 > 
-> However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.github.io/workshop2022-lesson-dataset-scouting/04-what-is-in-the-data/index.html), requires the use of a running CMSSW environment, either using Docker or the VM.
-> You may want to jump ahead to that episode to remind yourself of how to do that and get that running in the background, so that it's all ready to to go when we get there!
->
-> But come back here right after! :)
+> However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.github.io/workshop2022-lesson-dataset-scouting/04-what-is-in-the-data/index.html), requires the use of a running CMSSW environment in the CMS open data Docker container. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshop2022-lesson-docker/).
 {: .callout}
 
 > ## You've got a great idea! What's next?
@@ -48,9 +45,7 @@ people using and analyzing "other people's" data. The concern centered around we
 analyzing data and coming up with incorrect conclusions. 
 
 While no system is perfect, one way to guard against this is to only release well-understood, well-calibrated 
-datasets and to make sure open data analysts *only* use these datasets. Because the CERN Open Data Portal
-is a mutable environment and some datasets may change over time as they are being validated, it is important
-that we make sure that analysts *only* use these vetted datasets. These datasets are given
+datasets and to make sure open data analysts *only* use these datasets. These datasets are given
 a [Digital Object Identifier (DOI)](https://www.doi.org/) code for tracking. And if there
 are ever questions about the validity of the data, it allows us to check the 
 [data provenance](https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins.).
