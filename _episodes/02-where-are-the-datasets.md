@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Be able to find the data and Monte Carlo datasets"
 keypoints:
-- "The data and Monte Carlo are stored in directories with names that give you some insight as to what they contain"
+- "Use the filter selections in the left-hand sidebar of the CERN Open Data Portal to find dataset."
 ---
 
 # CERN Open Data Portal
@@ -40,12 +40,11 @@ sidebar that allows us to filter our selections. Let's see what's there.
 At first glance we can see a few things. First, there is an option to select only **Dataset** rather 
 than documentation or software or similar materials. Great! Going forward we'll select **Dataset**. 
 
-Next we see that there are a lot of entries for data from **2010**, **2011**, and **2012**, the 7 TeV and 8 TeV running periods. 
+Next we see that there are a lot of entries for data from **2010**, **2011**, **2012**, and **2015**, the 7 TeV, 8 TeV and 13 TeV running periods. 
 That's what we'll be working with for these exercises. 
 
 > ## Coming soon!
-> For the keen of eye, you can see that there are some entries for 2016 and later data, the 13 TeV run periods! 
-> But that will be for a future workshop. :)
+> CMS make regular open data releases, and the next ones are already in preparation.
 {: .testimonial}
 
 > ## Make a selection!
