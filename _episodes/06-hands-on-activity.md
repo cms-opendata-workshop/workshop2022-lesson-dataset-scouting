@@ -34,8 +34,7 @@ energy for those years?
 > ## Let's review!
 > Select the CMS *collision* data for 2015. Select only the MINIAOD data. Do you remember what the MINIAOD data are?
 >
-> Try to identify five (5) different triggers. What do you think they are triggering on? How do you find out
-> what these triggers are actually doing? 
+> Choose one dataset and identify different triggers that were used to direct events in this dataset. What do you think they are triggering on? 
 {: .challenge}
 
 > ## Let's review!
@@ -46,7 +45,7 @@ find a *Wprime* sample. Click on it. These are
 > How can you learn *about CMS simulated dataset names*? What do you think the W' is decaying to? 
 What is the assumed mass of the W' in this particular sample?
 >
-> How many events are in this sample? How much hard drive space does this sample occupy?
+> How many events are in this sample? How much hard drive space does this sample occupy? Can you find the generator parameters that were used to generate the collisions.
 {: .challenge}
 
 
