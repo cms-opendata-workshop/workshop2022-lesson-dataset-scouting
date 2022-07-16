@@ -4,7 +4,7 @@ teaching: 5
 exercises: 10
 questions:
 - "What data and run periods are available?"
-- "What triggers were used when the data was taken?"
+- "What data do the collision datasets contain?"
 - "What Monte Carlo samples are available?"
 objectives:
 - "To be able to navigate the CERN Open Data Portal's search tools"
@@ -14,7 +14,7 @@ keypoints:
 - "The Monte Carlo datasets contain a specific simulated physics process"
 ---
 
-## Data and triggers
+## Data and run periods
 
 We make a distinction between *data* which come from the real-life CMS detector
 and simulated *Monte Carlo* data. In general, when we say *data*, we mean the real, CMS-detector-created
@@ -75,9 +75,8 @@ or software.
 Some of the dataset names are quite difficult to intuit what they mean. Others should be roughly understandable. For example, 
 
 * **DoubleElectron** contains mainly events with at least two electrons above a certain energy threshold. 
-* **SingleMu** contains mainly events with at least one muon above a certain momentum threshol. 
+* **SingleMu** contains mainly events with at least one muon above a certain momentum threshold. 
 * **MinimumBias** events are taken without any trigger or selection criteria. 
-
 
 **Run period**
 
