@@ -12,30 +12,23 @@ keypoints:
 - "Some files may not have the information you're looking for"
 ---
 
-This part of the lesson will be done from within either a Docker container or VM. 
+This part of the lesson will be done from within the CMSSW docker container. 
 All commands will be typed inside that environment. 
 
-## Setting up your CMSSW area
+## Go to your CMSSW area
 
 If you completed the lesson on [Docker](https://cms-opendata-workshop.github.io/workshop2022-lesson-docker) you should already have a working CMSSW area.  
 
-Start the container with:
+Restart your existing `my_od` container with:
 ~~~
-docker start -i <theNameOfyourContainer>
-~~~
-{: .language-bash}
-
-Make sure you change directories to the `CMSSW_5_3_32/src` area; for instance, in Docker:
-
-~~~
-cd /home/cmsusr/CMSSW_5_3_32/src
+docker start -i my_od
 ~~~
 {: .language-bash}
 
-Note that we are not really "installing" CMSSW but setting up an environment for it.  CMSSW was already installed. This is why **every time** you open a new shell you will have to issue the `cmsenv` command, which is just a script that runs to set some environmental variables for your working area:
+Make sure you are in the `CMSSW_7_6_7/src` area; if needed change the directory:
 
 ~~~
-cmsenv
+cd /code/CMSSW_7_6_7/src
 ~~~
 {: .language-bash}
 
@@ -81,7 +74,7 @@ there will be *a lot* of output. You may find it useful to redirect the output t
 using `less` or a similar command (you can exit `less` by typing `q`). 
 
 ~~~
-edmDumpEventContent root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/TTJets_SemiLeptMGDecays_8TeV-madgraph/AODSIM/PU_RD1_START53_V7N-v1/10000/EA978C41-27D1-E211-9424-003048D46016.root > test_edm_output.log
+edmDumpEventContent root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-5to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/00000/029FD4E8-26DE-E511-92E9-0CC47A78A45A.root  > test_edm_output.log
 
 less test_edm_output.log
 ~~~
@@ -89,32 +82,31 @@ less test_edm_output.log
 ~~~
 Type                                  Module                      Label             Process
 ----------------------------------------------------------------------------------------------
-LHEEventProduct                       "source"                    ""                "LHE"
+LHEEventProduct                       "externalLHEProducer"       ""                "LHE"
 GenEventInfoProduct                   "generator"                 ""                "SIM"
 edm::TriggerResults                   "TriggerResults"            ""                "SIM"
-vector<int>                           "genParticles"              ""                "SIM"
-vector<reco::GenJet>                  "ak5GenJets"                ""                "SIM"
-vector<reco::GenJet>                  "ak7GenJets"                ""                "SIM"
-vector<reco::GenJet>                  "kt4GenJets"                ""                "SIM"
-vector<reco::GenJet>                  "kt6GenJets"                ""                "SIM"
-vector<reco::GenMET>                  "genMetCalo"                ""                "SIM"
-vector<reco::GenMET>                  "genMetCaloAndNonPrompt"    ""                "SIM"
+edm::TriggerResults                   "TriggerResults"            ""                "HLT"
+HcalNoiseSummary                      "hcalnoise"                 ""                "RECO"
+L1GlobalTriggerReadoutRecord          "gtDigis"                   ""                "RECO"
+double                                "fixedGridRhoAll"           ""                "RECO"
+double                                "fixedGridRhoFastjetAll"    ""                "RECO"
 .
 .
 .
-vector<reco::TrackExtra>              "tevMuons"                  "firstHit"        "RECO"
-vector<reco::TrackExtra>              "tevMuons"                  "picky"           "RECO"
-vector<reco::TrackExtrapolation>      "trackExtrapolator"         ""                "RECO"
-vector<reco::TrackJet>                "ak5TrackJets"              ""                "RECO"
-vector<reco::Vertex>                  "offlinePrimaryVertices"    ""                "RECO"
-vector<reco::Vertex>                  "offlinePrimaryVerticesWithBS"   ""                "RECO"
-vector<reco::VertexCompositeCandidate>    "generalV0Candidates"       "Kshort"          "RECO"
-vector<reco::VertexCompositeCandidate>    "generalV0Candidates"       "Lambda"          "RECO"
+vector<reco::GenJet>                  "slimmedGenJets"            ""                "PAT"
+vector<reco::GenJet>                  "slimmedGenJetsAK8"         ""                "PAT"
+vector<reco::GenParticle>             "prunedGenParticles"        ""                "PAT"
+vector<reco::GsfElectronCore>         "reducedEgamma"             "reducedGedGsfElectronCores"   "PAT"
+vector<reco::PhotonCore>              "reducedEgamma"             "reducedGedPhotonCores"   "PAT"
+vector<reco::SuperCluster>            "reducedEgamma"             "reducedSuperClusters"   "PAT"
+vector<reco::Vertex>                  "offlineSlimmedPrimaryVertices"   ""                "PAT"
+vector<reco::VertexCompositePtrCandidate>    "slimmedSecondaryVertices"   ""                "PAT"
+unsigned int                          "bunchSpacingProducer"      ""                "PAT"
 ~~~
 {: .output}
 
-You can get from this information the names of physics objects you may be interested in (e.g. `ak5TrackJets`)
-as well as what stage of processing they were produced at (**SIM** is for simulations and **RECO** is for reconstruction). 
+You can get from this information the names of physics objects you may be interested in (e.g. `slimmedGenJets`)
+as well as what stage of processing they were produced at (**SIM** is for simulations, **RECO** is for reconstruction and **PAT** is for MINIAOD level). 
 
 This information can be useful when writing your analysis code, which will be discussed in a later lesson. 
 
@@ -124,9 +116,9 @@ Some of the other command-line options can be useful as well to filter the infor
 > Try the following options (with the same file) and see what it gives you. Can you see why this might be useful?
 >
 > ~~~
-> edmDumpEventContent --regex=Muon root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/TTJets_SemiLeptMGDecays_8TeV-madgraph/AODSIM/PU_RD1_START53_V7N-v1/10000/EA978C41-27D1-E211-9424-003048D46016.root
+> edmDumpEventContent --regex=Muon root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-5to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/00000/029FD4E8-26DE-E511-92E9-0CC47A78A45A.root
 >
-> edmDumpEventContent --name root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/TTJets_SemiLeptMGDecays_8TeV-madgraph/AODSIM/PU_RD1_START53_V7N-v1/10000/EA978C41-27D1-E211-9424-003048D46016.root
+> edmDumpEventContent --name root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-5to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/00000/029FD4E8-26DE-E511-92E9-0CC47A78A45A.root
 > ~~~
 > {: .language-bash}
 {: .callout}
