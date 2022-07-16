@@ -8,20 +8,19 @@ questions:
 - "What Monte Carlo samples are available?"
 objectives:
 - "To be able to navigate the CERN Open Data Portal's search tools"
-- "To be able to find what triggers and Monte Carlo datasets there are using these search tools"
+- "To be able to find what collision data and Monte Carlo datasets there are using these search tools"
 keypoints:
-- "The data are directed to different datasetsFor each dataset, the list of triggers is listed in the dataset record. You will learn more about them during the workshop. based on trigger decisions"
-- "The Monte Carlo samples all have their own datasets"
-- "Navigating the Open Data Portal is the right way to find out what is available"
+- "The collision data are directed to different datasets based on trigger decisions"
+- "The Monte Carlo datasets contain a specific simulated physics process"
 ---
 
 ## Data and triggers
 
-We make a distinction between *data* which comes from the real-life CMS detector
+We make a distinction between *data* which come from the real-life CMS detector
 and simulated *Monte Carlo* data. In general, when we say *data*, we mean the real, CMS-detector-created
 data.
 
-The main data available is from what is known as **Run 1** and spans 2010-2012. The first batch of **Run 2** data from 2015 was released in 2021. These run
+The main data available are from what is known as **Run 1** and spans 2010-2012. The first batch of **Run 2** data from 2015 was released in 2021. These run
 periods can also be broken into **A**, **B**, **C**, and so-on, sub-periods and you may see
 that in some of the dataset names. 
 
@@ -82,9 +81,9 @@ Some of the dataset names are quite difficult to intuit what they mean. Others s
 
 **Run period**
 
-*Run2012B-v1* and *Run2012B-22Jan2013-v1* refer to when the data was taken and in the case of the second, when
-the data was processed. The details are not so important for you because the open data coordinators have
-taken care to only post vetted data. If you were a CMS analyst working on the data as it was being processed, 
+*Run2012B-v1* and *Run2012B-22Jan2013-v1* refer to when the data were taken and in the case of the second, when
+the data were processed. The details are not so important for you because CMS only releases
+vetted data. If you were a CMS analyst working on the data as it was being processed, 
 you might have to shift your analysis to a different dataset once all calibrations were completed. 
 
 **Data format**
@@ -116,14 +115,14 @@ any one of them, we see something like this.
 > ![](../assets/img/portal_screenshot_search_bar_collision_single_mu_ROOT_files.png)
 {: .callout}
 
-The prepended `root:` is because of how these files are stored. We'll use these directory
+The prepended `root:` is because of how these files are accessed. We'll use these directory
 paths when we go to inspect some of these files. 
 
 
 ## Monte Carlo
 
 We can go through a similar exercise with the Monte Carlo data. One major difference is that
-the Monte Carlo is not broken up by trigger. Instead, when you analyze the Monte Carlo, you will
+the Monte Carlo are not broken up by trigger. Instead, when you analyze the Monte Carlo, you will
 apply the trigger to the data to simulate what happens in the real data. You will learn
 more about this in the upcoming trigger exercise. 
 
