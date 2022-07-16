@@ -15,8 +15,7 @@ keypoints:
 Let's review some of the concepts we covered in the previous episodes. You are encouraged
 to go back and engage with those episodes in order to answer these questions. 
 
-You can post questions on the Mattermost channel for this exercise or, if you are
-doing this exercise in real time, use the "Raise hand" feature on Zoom. 
+You can post questions on the [Mattermost](https://mattermost.web.cern.ch/cmsodws2022/channels/datasets-pre-exercise) channel for this exercise. 
 
 > ## Let's review! 
 > Can you get to the starting page for the CMS Open Data Portal? Can you select
@@ -24,7 +23,7 @@ doing this exercise in real time, use the "Raise hand" feature on Zoom.
 {: .challenge}
 
 > ## Let's review! 
-> The bulk of the CMS released data (as of July 2021) covers what years? What was the collision
+> The bulk of the CMS released data (as of July 2022) covers what years? What was the collision
 energy for those years?
 {: .challenge}
 
@@ -33,19 +32,19 @@ energy for those years?
 {: .challenge}
 
 > ## Let's review!
-> Select the CMS *collision* data for 2012. Select only the AOD data. Do you remember what the AOD data are?
+> Select the CMS *collision* data for 2015. Select only the MINIAOD data. Do you remember what the MINIAOD data are?
 >
 > Try to identify five (5) different triggers. What do you think they are triggering on? How do you find out
 > what these triggers are actually doing? 
 {: .challenge}
 
 > ## Let's review!
-> Select the CMS *simulated* data for 2012. Select the **Heavy Gauge Bosons** (under *Filter by category*) and
-find a *Zprime* sample. Click on it. These are 
+> Select the CMS *simulated* data for 2015. Select the **Heavy Gauge Bosons** (under *Filter by category*) and
+find a *Wprime* sample. Click on it. These are 
 [hypothetical gauge bosons](https://en.wikipedia.org/wiki/W%E2%80%B2_and_Z%E2%80%B2_bosons).
 >
-> How can you learn *about CMS simulated dataset names*? What do you think the Z' is decaying to? 
-What is the assumed mass of the Z' in this particular sample?
+> How can you learn *about CMS simulated dataset names*? What do you think the W' is decaying to? 
+What is the assumed mass of the W' in this particular sample?
 >
 > How many events are in this sample? How much hard drive space does this sample occupy?
 {: .challenge}
