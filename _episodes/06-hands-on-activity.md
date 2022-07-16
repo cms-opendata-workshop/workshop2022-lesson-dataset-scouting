@@ -23,7 +23,7 @@ You can post questions on the [Mattermost](https://mattermost.web.cern.ch/cmsodw
 {: .challenge}
 
 > ## Let's review! 
-> The bulk of the CMS released data (as of July 2022) covers what years? What was the collision
+> The bulk of the CMS released data covers what years? What was the collision
 energy for those years?
 {: .challenge}
 
@@ -45,7 +45,7 @@ find a *Wprime* sample. Click on it. These are
 > How can you learn *about CMS simulated dataset names*? What do you think the W' is decaying to? 
 What is the assumed mass of the W' in this particular sample?
 >
-> How many events are in this sample? How much hard drive space does this sample occupy? Can you find the generator parameters that were used to generate the collisions.
+> How many events are in this sample? How much hard drive space does this sample occupy? Can you find the generator parameters that were used to generate the collisions?
 {: .challenge}
 
 
